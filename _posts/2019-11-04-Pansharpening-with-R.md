@@ -14,7 +14,7 @@ Pansharpening is one common method of data fusion. Pansharpening is performed to
 ​
 There is nothing wrong with using Python. You can certainly perform the same tasks in that language. However, performing raster analysis and geoprocessing is not a huge leap away from R's natural ability to work with matrices; R's primary function has traditionally been as a statistical, scientific, and data driven programming language. Since raster data is simply matrix data that has been given geographic context, it should be no surprise that R also works well as an alternative to other raster GIS software like TerrSet, ERDAS, or ENVI.
 
-The data and the methods:
+### The data and methods:
 
 The R scripts below illustrate some simple pansharpening methods in data fusion.
 
