@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-\[Geo\]Data is my professional portfolio, blog, and repository of self-made tutorials. Here, I will make connections between all things GIS and data, while focusing on these areas: (1) automation, (2) reproducibility, (3) software development, and (4) \[geospatial\] data science.
+\[Geo\]Data is my professional portfolio, blog, and repository of self-made tutorials. Here, I will make connections between all things GIS and data, while focusing on these areas: (1) automation, (2) reproducibility, (3) software development and data engineering, (4) \[geospatial\] data science, and (5) business intelligence.
 
 
 ## Jordan Frey
