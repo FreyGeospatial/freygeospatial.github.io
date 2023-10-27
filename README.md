@@ -2,4 +2,4 @@ This is the repository I will be using to store the code for my website. I am in
 
 To visit, please go to: https://freygeospatial.github.io/
 
-To run locally, run: `bundle exec jekyll serve``
+To run locally, run: `bundle exec jekyll serve`
