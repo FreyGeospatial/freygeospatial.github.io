@@ -192,7 +192,7 @@ group by class2
     </div>
 </div>
 
-**Note that I added the random() function to the code just as an assurance that no future student will copy my results.*
+**Note that I added the `random()` function to the code just as an assurance that no future student will copy my results.*
 
 <br>
 
