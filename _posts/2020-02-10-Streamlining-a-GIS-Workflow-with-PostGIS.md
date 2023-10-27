@@ -29,7 +29,7 @@ ogr2ogr -f "PostgreSQL" PG:"host=localhost user=postgres dbname=postgres passwor
 ogr2ogr -f "PostgreSQL" PG:"host=localhost user=postgres dbname=postgres password=******* port=5432" D:\FILE_PATH\streams.shp -overwrite -lco precision=NO -lco GEOMETRY_NAME=geom -nln "staging.kemo_streams"
 ogr2ogr -f "PostgreSQL" PG:"host=localhost user=postgres dbname=postgres password=******* port=5432" D:\FILE_PATH\vegetation.shp -overwrite -lco precision=NO -lco GEOMETRY_NAME=geom -nln "staging.kemo_vegetation"
 ```
-**ogr2ogr comes with GDAL if you do not already have that installed.*
+**`ogr2ogr` comes with [GDAL](https://gdal.org/). Install that if you have not already.*
 
 <br>
 
