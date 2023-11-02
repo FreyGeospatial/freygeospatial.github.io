@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Intersections (and differences) between Computer Science, Software Engineering, Data Engineering, Spatial Data Science and GIS
+title:  Intersections between Computer Science, Software Engineering, Data Engineering, Spatial Data Science and GIS
 categories: [Data Engineering, Data Science, GIS]
 ---
 
