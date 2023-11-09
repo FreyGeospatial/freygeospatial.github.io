@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Using Azure's Library Feature with Docker
+title:  Passing Azure Library Values into Docker
 categories: [Data Engineering, Azure, DevOps]
 ---
 
