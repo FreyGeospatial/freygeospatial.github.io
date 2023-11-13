@@ -3,9 +3,6 @@ layout: post
 title:  Streamlining a GIS Workflow with PostGIS
 categories: [PostGIS, Postgres, SQL, GIS]
 ---
-**You can download the data for this tutorial on my github, [here](https://github.com/FreyGeospatial/freygeospatial.github.io/tree/master/_data).*
-
-<br>
 
 Last fall semester, I was able to take an independent study where I expanded my knowledge of SQL beyond its traditional use of querying relational databases for text and numeric values. Instead, I began using it as a standalone GIS, using it to store and query geometries (points, lines, and polygons).
 
@@ -15,6 +12,8 @@ The assignment simulates a problem easy to envision occurring in the natural res
 - Finding total area of each forest cover type within 200 meters of an infested point
 - Finding out whether streams pass through the application areas
 - Finding the length of each stream segment that passes through an application area, and what type of forest cover it passes through
+
+**You can download the data for this tutorial on my github, [here](https://github.com/FreyGeospatial/freygeospatial.github.io/tree/master/_data){:target="_blank"}.*
 
 We are given 4 different set of geometries, stored as shapefiles:
 - Park boundary (polygon)
@@ -29,7 +28,7 @@ ogr2ogr -f "PostgreSQL" PG:"host=localhost user=postgres dbname=postgres passwor
 ogr2ogr -f "PostgreSQL" PG:"host=localhost user=postgres dbname=postgres password=******* port=5432" D:\FILE_PATH\streams.shp -overwrite -lco precision=NO -lco GEOMETRY_NAME=geom -nln "staging.kemo_streams"
 ogr2ogr -f "PostgreSQL" PG:"host=localhost user=postgres dbname=postgres password=******* port=5432" D:\FILE_PATH\vegetation.shp -overwrite -lco precision=NO -lco GEOMETRY_NAME=geom -nln "staging.kemo_vegetation"
 ```
-**`ogr2ogr` comes with [GDAL](https://gdal.org/). Install that if you have not already.*
+**`ogr2ogr` comes with [GDAL](https://gdal.org/){:target="_blank"}. Install that if you have not already.*
 
 <br>
 
@@ -146,7 +145,7 @@ INNER JOIN staging.kemo_bound as c on st_intersects(veg_intersect_t.st_intersect
 
 <br>
 
-What I am about to show will start to make the above more readable. I will introduce the `WITH` statement, or CTE query, which as I mentioned previously provides an easier way to write large SQL queries. See the documentation for that [here](https://www.postgresql.org/docs/9.1/queries-with.html). This code chunk below is equivalent to the above, and a bit easier on the eyes:
+What I am about to show will start to make the above more readable. I will introduce the `WITH` statement, or CTE query, which as I mentioned previously provides an easier way to write large SQL queries. See the documentation for that [here](https://www.postgresql.org/docs/9.1/queries-with.html){:target="_blank"}. This code chunk below is equivalent to the above, and a bit easier on the eyes:
 
 ```sql
 WITH buffer as (select (st_dump(st_union(st_buffer(a.geom, 200)))).geom

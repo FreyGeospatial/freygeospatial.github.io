@@ -64,4 +64,4 @@ for ($i=0; $i -lt $m.Count; $i++){
 $desired_report
 ```
 
-I may post more tutorials and code snippets on Power BI API implementations in the future. Until then, I would strongly recommend watching [Guy in a Cube](https://www.youtube.com/@GuyInACube) tutorials on YouTube. The channel has some great content for all things Power BI, including implementation of the REST API. Thanks for stopping by, and happy coding!
+I may post more tutorials and code snippets on Power BI API implementations in the future. Until then, I would strongly recommend watching [Guy in a Cube](https://www.youtube.com/@GuyInACube){:target="_blank"} tutorials on YouTube. The channel has some great content for all things Power BI, including implementation of the REST API. Thanks for stopping by, and happy coding!

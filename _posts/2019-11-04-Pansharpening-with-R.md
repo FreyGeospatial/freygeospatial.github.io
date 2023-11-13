@@ -22,7 +22,7 @@ The first attempts to follow the Intensity-Hue-Saturation (IHS) method described
 
 The other is a Brovey transformation method described in Jixian Zhang's 2010 publication, "Multi-Source Remote Sensing Data Fusion: Status and Trends" in the International Journal of Image and Data Fusion.
 
-The sample Landsat data I used can be obtained from: https://clarklabs.org/download/
+The sample Landsat data I used can be obtained from: [https://clarklabs.org/download/](https://clarklabs.org/download/){:target="_blank"}
 
 
 #### IHS Transformation
