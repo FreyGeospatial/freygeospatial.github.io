@@ -1,12 +1,10 @@
 ---
 layout: post
-title:  Pansharpening Remotely Sensed Data with R
+title:  Pansharpening Remotely Sensed Data with R - An Introduction to Data Fusion
 categories: [R,Remote Sensing, GIS]
 ---
 
-### What is data fusion, and what is pansharpening?
-
-Data fusion is a method of combining different modes of data (whose degrees of heterogeneity can vary) into a single output. While the purpose of data fusion varies from project to project, the unifying goal is to extract information from the fused result that could not be easily obtained from either source alone. Bear in mind the quote, "The whole is greater than the sum of its parts."
+Data fusion is a method of combining different modes of data (whose degrees of heterogeneity can vary) into a single output. While the purpose of data fusion varies from project to project, the unifying goal is to extract information from the fused result that could not be easily obtained from either source alone. Bear in mind the quote, *"The whole is greater than the sum of its parts."*
 
 Pansharpening is one common method of data fusion. Pansharpening is performed to increase the spatial resolution of remotely sensed imagery by fusing an image's panchromatic band with its multispectral bands. Due to the way in which a sensor captures an image, the panchromatic band always has a higher spatial resolution than its multispectral counterparts. With Landsat images, the panchromatic band has a spatial resolution of 15 meters, while the multispectral bands have a spatial resolution of 30 meters. ​
 
