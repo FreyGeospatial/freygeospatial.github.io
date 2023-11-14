@@ -35,19 +35,19 @@ ogr2ogr -f "PostgreSQL" PG:"host=localhost user=postgres dbname=postgres passwor
 Let's take a look at our inputs:
 <div style="display: flex;">
     <div style="flex: 30%; text-align: center;">
-        <img src="/images/boundary.PNG" alt="Points">
+        <img src="/images/postgis-intro/boundary.PNG" alt="Points">
         <div style="font-weight: bold;">Boundary</div>
     </div>
     <div style="flex: 26.5%; text-align: center;">
-        <img src="/images/points.PNG" alt="Points">
+        <img src="/images/postgis-intro/points.PNG" alt="Points">
         <div style="font-weight: bold;">Points</div>
     </div>
     <div style="flex: 24.5%; text-align: center;">
-        <img src="/images/streams.PNG" alt="Streams">
+        <img src="/images/postgis-intro/streams.PNG" alt="Streams">
         <div style="font-weight: bold;">Streams</div>
     </div>
     <div style="flex: 26%; text-align: center;">
-        <img src="/images/vegetation.PNG" alt="Vegetation">
+        <img src="/images/postgis-intro/vegetation.PNG" alt="Vegetation">
         <div style="font-weight: bold;">Vegetation</div>
     </div>
 </div>
@@ -78,11 +78,11 @@ Both result in the same output. See below:
 
 <div style="display: flex;">
     <div style="flex: 30%; text-align: center;">
-        <img src="/images/buffer_dissolve.PNG " alt="Points">
+        <img src="/images/postgis-intro/buffer_dissolve.PNG " alt="Points">
         <div style="font-weight: bold;">Dissolved Buffer</div>
     </div>
     <div style="flex: 26.5%; text-align: center;">
-        <img src="/images/records.PNG" alt="records">
+        <img src="/images/postgis-intro/records.PNG" alt="records">
     </div>
 </div>
 
@@ -96,7 +96,7 @@ from staging.kemo_infest_points as a;
 
 <div style="display: flex;">
     <div style="flex: 30%; text-align: center;">
-        <img src="/images/buffer_only.PNG " alt="buffer only">
+        <img src="/images/postgis-intro/buffer_only.PNG " alt="buffer only">
         <div style="font-weight: bold;">Buffer Only</div>
     </div>
 </div>
@@ -113,7 +113,7 @@ from staging.kemo_infest_points as a;
 
 <div style="display: flex;">
     <div style="flex: 30%; text-align: center;">
-        <img src="/images/union_alone.PNG " alt="Union Only">
+        <img src="/images/postgis-intro/union_alone.PNG " alt="Union Only">
         <div style="font-weight: bold;">Single Record from Union and Buffer Only</div>
     </div>
 </div>
@@ -135,11 +135,11 @@ INNER JOIN staging.kemo_bound as c on st_intersects(veg_intersect_t.st_intersect
 
 <div style="display: flex;">
     <div style="flex: 30%; text-align: center;">
-        <img src="/images/veg_in_buffer.PNG" alt="Points">
+        <img src="/images/postgis-intro/veg_in_buffer.PNG" alt="Points">
         <div style="font-weight: bold;">Vegetation within Buffered Zones</div>
     </div>
     <div style="flex: 26.5%; text-align: center;">
-        <img src="/images/veg_in_buffer_records.PNG" alt="Records">
+        <img src="/images/postgis-intro/veg_in_buffer_records.PNG" alt="Records">
     </div>
 </div>
 
@@ -187,7 +187,7 @@ group by class2
 
 <div style="display: flex;">
     <div style="flex: 30%; text-align: center;">
-        <img src="/images/random.PNG " alt="records">
+        <img src="/images/postgis-intro/random.PNG " alt="records">
     </div>
 </div>
 

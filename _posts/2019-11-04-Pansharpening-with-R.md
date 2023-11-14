@@ -80,27 +80,27 @@ plotRGB(brovey_stack, r = 3, g = 2, b = 1, stretch = "lin")
 
 <div style="display: flex;">
     <div style="flex: 50%; text-align: center;">
-        <img src="/images/tcc_orig.png" alt="True Color Composite">
+        <img src="/images/pansharpening/tcc_orig.png" alt="True Color Composite">
         <div style="font-weight: bold;">True Color Composite</div>
     </div>
     <div style="flex: 50%; text-align: center;">
-        <img src="/images/pan_orig.png" alt="Panchromatic Band">
+        <img src="/images/pansharpening/pan_orig.png" alt="Panchromatic Band">
         <div style="font-weight: bold;">Panchromatic Band</div>
     </div>
 </div>
 
 <div style="display: flex;">
     <div style="flex: 50%; text-align: center;">
-        <img src="/images/terrset-img_orig.png" alt="TerrSet IHS Method">
+        <img src="/images/pansharpening/terrset-img_orig.png" alt="TerrSet IHS Method">
         <div style="font-weight: bold;">TerrSet IHS Method</div>
     </div>
     <div style="flex: 50%; text-align: center;">
-        <img src="/images/r-ihs_1_orig.png" alt="Panchromatic Band">
+        <img src="/images/pansharpening/r-ihs_1_orig.png" alt="Panchromatic Band">
         <div style="font-weight: bold;">IHS Method in R - Attempt at Emulating TerrSet Methodology</div>
     </div>
 </div>
 
-![Brovey Method](/images/brovey_orig.png){: width="375" height="300"}
+![Brovey Method](/images/pansharpening/brovey_orig.png){: width="375" height="300"}
 
 <p style="text-align: center;"><b>Brovey Method</b></p>
 <br/>
