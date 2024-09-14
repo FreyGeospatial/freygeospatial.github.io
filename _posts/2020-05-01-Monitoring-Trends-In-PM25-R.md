@@ -4,11 +4,7 @@ title:  "Geospatial Time Series Analysis: Monitoring Trends in PM2.5 in NYC Usin
 categories: [R, GIS, Data Analytics, Spatial Statistics]
 ---
 
-*A collaborative project between myself and [Priyanka Verma](https://github.com/verma-priyanka)*.
-
-
-### Introduction
-This project seeks to gain insights from particulate matter air pollutant trends in the New York Metropolitan Area. Specifically, we look at particulate matter that is less than 2.5 micrometers (PM2.5), and only data obtained during winter months, due to the higher level of PM2.5 during that season.  We developed this in a way that should be easy to reproduce and understand.
+This collaborative project between myself and [Priyanka Verma](https://github.com/verma-priyanka) seeks to gain insights from particulate matter air pollutant trends in the New York Metropolitan Area. Specifically, we look at particulate matter that is less than 2.5 micrometers (PM2.5), and only data obtained during winter months, due to the higher level of PM2.5 during that season.  We developed this in a way that should be easy to reproduce and understand.
 
 <br>
 
