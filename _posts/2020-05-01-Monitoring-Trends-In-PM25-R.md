@@ -254,10 +254,16 @@ Notice that the `kendall_output` data structure is that of a RasterBrick. Raster
 ```R
 # plot Kendall's tau statistic
 levelplot(kendall_output$tau, main = "Kendall's tau statistic")
+```
 ![Monitoring Sites](/images/pm25/kendall_tau.png){: width="375" height="300"}
 
+<br>
+
 # plot p-value
+```R
 levelplot(kendall_output$sl, main = "p-value")
+```
+
 ![Monitoring Sites](/images/pm25/kendall_pval.png){: width="375" height="300"}
 
 
@@ -284,6 +290,7 @@ plot(ktau_img, axes = F)
 mkp_img <- load.image("terrset/TERRSET_MK_P.BMP")
 plot(mkp_img, axes = F)
 ```
+
 ![Monitoring Sites](/images/pm25/TERRSET_MK_P.png){: width="375" height="300"}
 
 <br>
