@@ -266,7 +266,7 @@ levelplot(kendall_output$sl, main = "p-value")
 
 ![Monitoring Sites](/images/pm25/kendall_pval.png){: width="375" height="300"}
 
-
+```R
 # write to rst
 writeRaster(kendall_output$tau, filename = "output/tau.rst", overwrite=TRUE)
 writeRaster(kendall_output$sl, filename ="output/mk_p-value.rst", overwrite=TRUE)
