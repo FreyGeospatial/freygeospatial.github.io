@@ -259,8 +259,8 @@ levelplot(kendall_output$tau, main = "Kendall's tau statistic")
 
 <br>
 
-# plot p-value
 ```R
+# plot p-value
 levelplot(kendall_output$sl, main = "p-value")
 ```
 
