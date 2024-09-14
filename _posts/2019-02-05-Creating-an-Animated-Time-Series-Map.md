@@ -3,7 +3,7 @@ layout: post
 title: "Creating an Animated Time Series Map of The US Housing Price Index"
 author: "Jordan Frey"
 date: "February 5, 2019"
-categories: [R, GIS]
+categories: [R, GIS, Data Visualization]
 ---
 
 This was my submission for the February 5th, 2019 [*#TidyTuesday*](https://twitter.com/search?q=%23tidytuesday&src=hashtag_click){:target="_blank"} challenge.

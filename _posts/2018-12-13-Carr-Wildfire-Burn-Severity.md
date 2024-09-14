@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Measuring the Burn Severity of the 2018 California Carr Wildfire
-categories: [Remote Sensing, GIS]
+categories: [Remote Sensing, GIS, Data Analytics]
 ---
 
 A collaborative remote sensing project by Jordan Frey and [Bryce Stouffer](https://www.linkedin.com/in/bryce-stouffer-07240716b/){:target="_blank"}
