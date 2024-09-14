@@ -4,8 +4,10 @@ title:  Measuring the Burn Severity of the 2018 California Carr Wildfire
 categories: [Remote Sensing, GIS, Data Analytics]
 ---
 
-This collaborative remote sensing project between myself and [Bryce Stouffer](https://www.linkedin.com/in/bryce-stouffer-07240716b/) aimed to research the burn severity of the Carr Wildfire and its relationship to terrain slope steepness. The Carr Wildfire was located in Shasta and Trinity Counties in Northern California. It burned approximately 230,000 acres between July 23 and September 4, 2018. The Carr Fire cost billions of dollars in damages, destroyed 1,615 buildings, and caused three firefighter fatalities [[^1]]. As of December 4, 2018, this was the seventh largest wildfire in California state history, in terms of acreage burned [[^1]]. Given that wildfires are an increasing concern for Californians in the face of a warming climate, it is important to report on the severity of new fires as they appear and to study why some fires are more severe than others are. In a remote sensing lens, researching fire severity helps promote post-fire restoration efforts, helps stakeholders understand wildfire behavior, and may help predict future fires in the area.
-{:target="_blank"}
+A collaborative remote sensing project between myself and [Bryce Stouffer](https://www.linkedin.com/in/bryce-stouffer-07240716b/){:target="_blank"}.
+
+This project aimed to research the burn severity of the Carr Wildfire and its relationship to terrain slope steepness. The Carr Wildfire was located in Shasta and Trinity Counties in Northern California. It burned approximately 230,000 acres between July 23 and September 4, 2018. The Carr Fire cost billions of dollars in damages, destroyed 1,615 buildings, and caused three firefighter fatalities [[^1]]. As of December 4, 2018, this was the seventh largest wildfire in California state history, in terms of acreage burned [[^1]]. Given that wildfires are an increasing concern for Californians in the face of a warming climate, it is important to report on the severity of new fires as they appear and to study why some fires are more severe than others are. In a remote sensing lens, researching fire severity helps promote post-fire restoration efforts, helps stakeholders understand wildfire behavior, and may help predict future fires in the area.
+
 
 
 ## Objective and Research Questions:
@@ -218,5 +220,8 @@ The Carr Fire perimeter shapefile was not available at the beginning of this pro
         <img src="/images/burn-severity-carr/study-area_orig.png" alt="Study Area">
     </div>
 </div>
+
+<br>
+
 ## References:
 [^1]: Cal Fire, ‘Carr Fire’, 2018. [Online] Available: [http://www.fire.ca.gov/current_incidents/incidentdetails/Index/2164](http://www.fire.ca.gov/current_incidents/incidentdetails/Index/2164){:target="_blank"} [Accessed: 1- Dec- 2018].
