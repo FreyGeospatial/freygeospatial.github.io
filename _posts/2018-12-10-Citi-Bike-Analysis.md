@@ -37,21 +37,26 @@ The third dataset is a list of bank holidays and their corresponding dates. Bank
     <span style="font-size: 10px">Table 1: Variables used used in the analyses. “Variable Name” lists how I hardcoded the “Variable Alias” in R. *Denotes that “Rentals per Day” is the dependent variable.</span>
 </div>
 
+<br>
+
 |Date|Freq|AWND|PRCP|TAVG|isWeekday|Holiday
 |--|--|--|--|--|--|--|
-|2017-01-01|5.59|0.00|44.0|1|0.0|
-|2017-01-02|9.17|0.21|39.0|0.0|1|
-|2017-01-03|10.74|0.58|41.0|0.0|0.0|
-|2017-01-04|8.05|0.00|43.0|0.0|0.0|
-|2017-01-05|7.83|0.00|30.5|0.0|0.0|
+|2017-01-01|12|5.59|0.00|44.0|1|0.0|
+|2017-01-02|8|9.17|0.21|39.0|0.0|1|
+|2017-01-03|10|10.74|0.58|41.0|0.0|0.0|
+|2017-01-04|33|8.05|0.00|43.0|0.0|0.0|
+|2017-01-05|19|7.83|0.00|30.5|0.0|0.0|
 
 <div>
     <span style="font-size: 10px">Table 2: First five records from the dataset. The unit of observation is the number of rentals (Freq) per day. Notice that the independent variable “Holiday” refers to bank holidays. In this case, if a holiday (such as New Year’s Day) falls on a Sunday, the banking system may be closed on the following weekday (such as January 2nd). For full dataset, see appendix.</span>
 </div>
 
+<br>
+
 
 A fourth dataset was also obtained from Citi Bike, which includes data on rentals from January 1st, 2018 to November 30th, 2018. December 2018 data was not available at the time of this analysis. This dataset will be used as a "test" set, to assess how accurately the 2017 model will predict rentals in 2018.
 
+<br>
 
 ### Data Cleaning Steps:
  
@@ -92,7 +97,7 @@ Finally, I joined my aggregated dataset with the bank holidays dataset on the �
 |<strong>max</strong>|57|18.34|3.03|85.5|1|1|
 |<strong>range</strong>|56|17.22|3.03|71|1|1|
 |<strong>sum</strong>|10000|1880.14|41.91|20477|105|10|
-|<strong>median</strong>|28|4.92|0|57.5|Value|0|
+|<strong>median</strong>|28|4.92|0|57.5|0|0|
 |<strong>mean</strong>|27.70083102|​5.208144044|0.116094183|​56.72299169|​0.290858726|​0.027700831|
 |<strong>SE.mean</strong>|0.647898856|​0.120091085|0.017951362|0.878559458|0.023936254|​0.008649582|
 |<strong>CI.mean</strong>|1.274141992|​0.236168181|0.035302708|1.727753471|0.047072449|​0.017010055|
@@ -227,8 +232,8 @@ Finally, I joined my aggregated dataset with the bank holidays dataset on the �
 
 To analyze each independent variable’s contribution to the strength of the regression line, I created several regression equations, incrementally adding variables to subsequent equations and measuring their impact on the R2 and adjusted R2 values. My final model output and interpretations is as follows:
 
-|||Slope Estimate|Std. Error|t-value|p-value|
-|<b>(Intercept)</b>2.842370||0.146923|19.346|​< 2e-16|
+||Slope Estimate|Std. Error|t-value|p-value|
+|<b>(Intercept)</b>|2.842370|0.146923|19.346|​< 2e-16|
 |<b>TAVG</b>|0.048033|0.002404|​19.977|​< 2e-16|
 |<b>PRCP</b>|​-0.947616|0.117355|​-8.075|​1.06e-14|
 |<b>isWeekday</b>|​-1.073883|​0.088655|​-12.113|​< 2e-16|
