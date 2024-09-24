@@ -9,6 +9,7 @@ permalink: /about/
 
 ## Jordan Frey
 
-I am a data engineer specializing in geospatial applications. I have fluency in Python, R, SQL, and git, and have experience implementing enterprise solutions in both an AWS and Azure cloud environment.
+I am a data engineer with a background in geospatial data science. I have fluency in Python, R, and SQL, and develop data solutions in both AWS and Azure. I am primarily interested in DevOps, automating data pipelines, and spatial statistics.
+
 
 I obtained my Master's degree (2020) in Geographic Information Science from Clark University in Worcester, MA. I have a Certificate of Advanced Study (2018) in Data Science from Syracuse University, and obtained my Bachelor's degree (2015) in Environmental Studies from Ithaca College.
