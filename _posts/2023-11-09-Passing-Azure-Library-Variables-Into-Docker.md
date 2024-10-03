@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Passing Azure Library Values into Docker
-categories: [Data Engineering, Azure, DevOps]
+categories: [Azure, DevOps]
 ---
 
 I had a project recently where I created a private software package and hosted it on Azure Artifacts, a similar platform to Pypi or Github for distributing packages. There was a scenario where I needed to pass values from Azure Library into Docker.

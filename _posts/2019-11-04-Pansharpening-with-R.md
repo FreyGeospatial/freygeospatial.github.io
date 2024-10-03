@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Pansharpening Remotely Sensed Data with R - An Introduction to Data Fusion
-categories: [R,Remote Sensing, GIS]
+categories: [R, Remote Sensing, GIS, Information Visualization]
 ---
 
 Data fusion is a method of combining different modes of data (whose degrees of heterogeneity can vary) into a single output. While the purpose of data fusion varies from project to project, the unifying goal is to extract information from the fused result that could not be easily obtained from either source alone. Bear in mind the quote, *"The whole is greater than the sum of its parts."*

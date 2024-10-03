@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Citi Bike: A Multivariate Analysis of Bicycle Rentals in NYC"
-categories: [R, Data Analytics, Data Science]
+categories: [R, Data Science]
 ---
 
 Citi Bike is a privately owned bike share program serving a number of cities, including New York City, which is the location of this analysis. The program collects anonymous data on its users and their bike usage, and they make that information available to the public for analysis.
