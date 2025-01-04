@@ -65,7 +65,7 @@ To follow this tutorial in its entirety, you must:
     - Black formatter extension
     - Python extension
 1. Have a GitHub account and public repository to hold examples
-1. A basic understanding of `git` concepts, CI/CD, and preferably experience using GitHub Actions or Azure Pipelines
+1. A basic understanding of `git` concepts, shell scripting, CI/CD, and preferably experience using GitHub Actions or Azure Pipelines
 
 It will also be helpful- but not explicitly required- to use these tools locally as you work through this tutorial:
 - `black` formatter CLI utility: [https://github.com/psf/black](https://github.com/psf/black)
