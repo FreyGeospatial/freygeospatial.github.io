@@ -123,7 +123,7 @@ Then, add these steps to your Actions workflow:
           fi
 ```
 
-If there was any improperly formatted Python code, the deployment would fail. For the full code, you visit my Github repository: https://github.com/FreyGeospatial/github_actions. And feel free to fork my repo as needed!
+If there was any improperly formatted Python code, the deployment would fail. For the full code, you visit my Github repository: [https://github.com/FreyGeospatial/github_actions](https://github.com/FreyGeospatial/github_actions). And feel free to fork my repo as needed!
 
 Overall, this is a pretty simple example of what you can do to enforce a cleaner codebase on your team. I encourage you to explore other linters, including `Flake8`, or even `ruff`, the latter of which has gained popularity recently for being very computationally performant. 
 
