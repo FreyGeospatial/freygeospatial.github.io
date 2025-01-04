@@ -16,7 +16,7 @@ You have a different coding style than your coworker though, and while reviewing
 This scenario is a reality on many engineering teams, and is not ~just~ an annoyance for developers that appreciate pretty code; rather, this reality can cause a multitude of issues including:
 1. visual clutter that distracts from the actual code logic being written
 1. non-standard style practices that cause IDEs to light up with lint warnings everywhere
-1. reducied efficacy of IDE auto-complete functionality when searching for the correct variable, class, function or method name
+1. reduced efficacy of IDE auto-complete functionality when searching for the correct variable, class, function or method name
 1. negated functionality of IDEs ability to preview docstring descriptors for modules, classes, functions and methods
 1. increased time spent deciphering code that could have been spent building features, fixing bugs, or doing (quite literally) anything else.
 
