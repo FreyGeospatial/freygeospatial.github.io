@@ -93,7 +93,7 @@ With these settings, saving a python file will automatically be autoformatted ac
 
 On a team though, it can be hard to enforce contributor IDE settings. A CI/CD rule to check that code is styled according to team guidelines is a necessary second-check.
 
-To check ONLY those files that have been modified against the `main branch`, first add this shell script to your .github folder under a "scripts" subdirectory:
+To check ONLY those files that have been modified against the `main` branch, first add this shell script to your .github folder under a "scripts" subdirectory:
 
 ```bash
 # echos modified python files, but excludes those deleted
