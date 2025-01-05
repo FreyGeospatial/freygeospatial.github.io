@@ -111,6 +111,7 @@ Then, commit these changes to a branch that is based off of `main`, but is not `
 
 To check ONLY those Python files that have been modified against the `main` branch, first add this shell script to your .github folder under a "scripts" subdirectory:
 
+##### modified_files.sh
 ```bash
 # echos modified python files, but excludes those deleted
 changed_files=$(git diff --diff-filter=d --name-only $(git merge-base HEAD remotes/origin/main) HEAD | grep .py)
