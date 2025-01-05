@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Case for Auto-Formatters and Linters: Elevating Code Quality in Software Engineering"
-categories: [DevOps, Python, GitHub Actions, bash]
+categories: [DevOps, Python, GitHub Actions, Shell Scripting]
 ---
 
 
@@ -20,7 +20,7 @@ This scenario is a reality on many engineering teams, and is not ~just~ an annoy
 1. negated functionality of IDEs ability to preview docstring descriptors for modules, classes, functions and methods
 1. increased time spent deciphering code that could have been spent building features, fixing bugs, or doing (quite literally) anything else.
 
-Overall, such discrepancies create a hinderance a team's productivity and will only become more problematic as projects grow. Ugly code (and undocumented code- thank goodness for [PEP-257](https://peps.python.org/pep-0257/)) almost certaintly means longer feature-to-production timetables; it can even lead to bugs from misinterpretted code. Team-leads at a minimum should encourage adaptation of some guideline to adhere to. Preferably, we should attach linters and autoformatters to our pull requests and CI/CD pipelines.
+Overall, such discrepancies create a hinderance a team's productivity and will only become more problematic as projects grow. Ugly code (and undocumented code- thank goodness for [PEP-257](https://peps.python.org/pep-0257/){:target="_blank"}) almost certaintly means longer feature-to-production timetables; it can even lead to bugs from misinterpretted code. Team-leads at a minimum should encourage adaptation of some guideline to adhere to. Preferably, we should attach linters and autoformatters to our pull requests and CI/CD pipelines.
 
 ### ...Enter the Black Formatter
 Autoformatters and linters are tools designed to automatically format or check code according to a set of predefined style guidelines or rules; they can also help make code that was written by ten developers and a GPT look like it was written by just one. One of the most popular options for Python is the [Black Formatter](https://black.readthedocs.io/en/stable/){:target="_blank"}, which helps format your Python code according to [PEP-8](https://peps.python.org/pep-0008/){:target="_blank"} industry standards, the most famous of the PEP guidelines.
@@ -68,8 +68,8 @@ To follow this tutorial in its entirety, you must:
 1. A basic understanding of `git` concepts, shell scripting, CI/CD, and preferably experience using GitHub Actions or Azure Pipelines
 
 It will also be helpful- but not explicitly required- to use these tools locally as you work through this tutorial:
-- `black` formatter CLI utility: [https://github.com/psf/black](https://github.com/psf/black)
-- `act` utility for running github actions locally: [https://github.com/nektos/act](https://github.com/nektos/act)
+- `black` formatter CLI utility: [https://github.com/psf/black](https://github.com/psf/black){:target="_blank"}
+- `act` utility for running github actions locally: [https://github.com/nektos/act](https://github.com/nektos/act){:target="_blank"}
 
 
 #### Workflow:
@@ -92,6 +92,21 @@ Add this to the json:
 With these settings, saving a python file will automatically be autoformatted according to Black style guides. If you keep `formatOnSave` set to false, you could alternatively right-click the editor, and select "format document" for the formatter to run.
 
 On a team though, it can be hard to enforce contributor IDE settings. A CI/CD rule to check that code is styled according to team guidelines is a necessary second-check.
+
+To properly test that this next piece works as expected, make sure to set the `formatOnSave` from the previous step to `false`. Then, put two Python files in your project directory (the root is fine- just keep it out of the `.github` folder). Keep one properly formatted, and the second improperly formatted. You can use these basic examples:
+
+```python
+# Properly formatted python code:
+x = {"hello": "world"}
+```
+
+
+```python
+# Improperly formatted python code, with added whitespace before the ending curly brace
+x = {"hello": "world" }
+```
+
+Then, commit these changes to a branch that is based off of `main`, but is not `main`.
 
 To check ONLY those Python files that have been modified against the `main` branch, first add this shell script to your .github folder under a "scripts" subdirectory:
 
@@ -123,7 +138,7 @@ Then, add these steps to your Actions workflow:
           fi
 ```
 
-If there was any improperly formatted Python code, the deployment would fail. For the full code, you visit my Github repository: [https://github.com/FreyGeospatial/github_actions](https://github.com/FreyGeospatial/github_actions).
+If there was any improperly formatted Python code, the deployment would fail. You can check this on GitHub Actions in your personal repository. Otherwise, to test this locally, first make sure you have the `nektos/act` CLI tool and run the `act` command in your terminal, with any options if desired. For example, I usually will run `act <github_event_name> --container-architecture linux/amd64`. For all options using this utility, please look into its [documentation](https://nektosact.com/){:target="_blank"}. For my own complete, working example on this workflow, you visit my Github repository: [https://github.com/FreyGeospatial/github_actions](https://github.com/FreyGeospatial/github_actions){:target="_blank"}.
 
 Overall, this is a pretty simple example of what you can do to enforce a cleaner codebase on your team. I encourage you to explore other linters, including `Flake8`, or even `ruff`, the latter of which has gained popularity recently for being very computationally performant. 
 
