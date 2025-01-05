@@ -93,14 +93,15 @@ With these settings, saving a python file will automatically be autoformatted ac
 
 On a team though, it can be hard to enforce contributor IDE settings. A CI/CD rule to check that code is styled according to team guidelines is a necessary second-check.
 
-To properly test that this next piece works as expected, make sure to set the `formatOnSave` from the previous step to `false`. Then, put two Python files in your project directory (the root is fine- just keep it out of the `.github` folder). Keep one properly formatted, and the second improperly formatted. You can use these basic examples:
+To properly test that this next piece works as expected, make sure to set the `formatOnSave` from the previous step to `false`. Then, put two Python files in your project directory (a `src` subdirectory is fine, as is the root- just keep it out of the `.github` folder). Keep one properly formatted, and the second improperly formatted. You can use these basic examples:
 
+##### no_issues.py
 ```python
 # Properly formatted python code:
 x = {"hello": "world"}
 ```
 
-
+##### lint_this.py
 ```python
 # Improperly formatted python code, with added whitespace before the ending curly brace
 x = {"hello": "world" }
