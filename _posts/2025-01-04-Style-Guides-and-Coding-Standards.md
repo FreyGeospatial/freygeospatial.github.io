@@ -45,7 +45,7 @@ You can also install black formatter as a CLI utility: `pip install black`.
 
 ### Other Useful Linters and Extensions:
 You can use other linters as either an alternative or in addition to Black. Some recommended ones include:
-- flake8, flakeheaven, flake-8-docstrings, flake8-docstrings-complete
+- flake8, flakeheaven, flake8-docstrings
 - pylint
 - ruff
 
