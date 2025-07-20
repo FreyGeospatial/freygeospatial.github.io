@@ -22,7 +22,7 @@ In this post, we’ll walk through how to set up an Ubuntu VM in UTM and configu
     </div>
 </div>
 
-1. Start your ubuntu instance and log in
+1. Start your Ubuntu instance and log in
 1. Ensure you can allow for other machines to ssh into the Ubuntu guest machine by running 
     1. `sudo apt install openssh-server`
     1. `sudo systemctl enable ssh`
