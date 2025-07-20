@@ -26,4 +26,4 @@ In this post, I’ll walk through how to set up an Ubuntu VM in UTM and configur
 1. Ensure you can allow for other machines to ssh into the Ubuntu guest machine by running 
     1. `sudo apt install openssh-server`
     1. `sudo systemctl enable ssh`
-1. In your host terminal, run `ssh -p 22022 <username>@localhost` where `<username>` is your Ubuntu username.
+1. In your host terminal, run `ssh -p 22022 <username>@localhost`
