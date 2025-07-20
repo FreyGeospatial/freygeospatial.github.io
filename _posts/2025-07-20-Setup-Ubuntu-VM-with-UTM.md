@@ -10,7 +10,7 @@ In this post, we’ll walk through how to set up an Ubuntu VM in UTM and configu
 
 1. Install UTM
 1. Download your desired Ubuntu instance (use ARM compatible ISO's for M-series Macs).
-1. Follow all the steps found here: https://www.youtube.com/watch?v=1PL-0-5BNXs
+1. Follow all the steps found here: [https://www.youtube.com/watch?v=1PL-0-5BNXs](https://www.youtube.com/watch?v=1PL-0-5BNXs)
 1. Go to the UTM network settings for your new VM
 1. Change the "Network Mode" to "Emulated VLAN"
 1. Go to port forwarding and select these options: 
