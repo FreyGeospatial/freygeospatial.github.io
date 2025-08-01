@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "Setup an Ubuntu Virtual Machine on MacOS with the UTM Emulator"
-categories: [MacOS, Linux, shell scripting, virtual machines]
+categories: [MacOS, Linux, virtual machines]
 ---
 
-At work, I do most of my development in Ubuntu via WSL, and I’ve grown to really enjoy working in a Linux environment. For personal projects, I wanted to stick with Linux, but my home machine runs macOS. To bridge the gap, I turned to UTM — a free, open-source virtualization and emulation tool for macOS. While UTM is a great option and alternative to Parallels, setting up a Linux VM with it does involve a bit of extra effort.
+In all my jobs- previous and current- I've been using Linux in one form or another, and I've grown to both enjoy and depend on it. For personal projects, I wanted to stick with that environment. My home machine runs macOS, however. To bridge the gap, I turned to UTM — a free, open-source virtualization and emulation tool for macOS. While UTM is a great option and alternative to Parallels, setting up a Linux VM with it does involve a bit of extra effort.
 
 In this post, I’ll walk through how to set up an Ubuntu VM in UTM and configure it so you can SSH into it from your macOS host. If you only need terminal access, SSH is recommended over using the UTM GUI for a smoother and more efficient experience.
 
