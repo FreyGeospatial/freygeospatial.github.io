@@ -27,7 +27,7 @@ Before setting up SSH or port forwarding, it helps to understand what your netwo
 
 Both display information about your active network interfaces, including interface names (e.g., `eth0`, `lo`), IPv4 and IPv6 addresses, MAC addresses, and interface status. They usually show the private ip address of devices on network.
 
-*Note: if you want to use ifconfig on a Linux machine where it isn't preinstalled, run `sudo apt install net-tools` and then add it to the path. To add it to the path, edit your `~/.bashrc file` and append `export PATH="$PATH:/sbin:/usr/sbin"` to it.*
+*Note: if you want to use ifconfig on a Linux machine where it isn't preinstalled, run `sudo apt install net-tools` and then add it to the path. To add it to the path, edit your `~/.bashrc file` and append `export PATH="$PATH:/sbin:/usr/sbin"` to it. Then, restart your terminal or reload the bashrc file with `source ~/.bashrc`*
 
 #### What addresses will you see?
 
