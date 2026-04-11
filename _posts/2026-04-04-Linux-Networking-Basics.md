@@ -27,6 +27,8 @@ Before setting up SSH or port forwarding, it helps to understand what your netwo
 
 Both display information about your active network interfaces, including interface names (e.g., `eth0`, `lo`), IPv4 and IPv6 addresses, MAC addresses, and interface status. They usually show the private ip address of devices on network.
 
+*Note: if you want to use ifconfig on a Linux machine where it isn't preinstalled, run `sudo apt install net-tools` and then add it to the path. To add it to the path, edit your `~/.bashrc file` and append `export PATH="$PATH:/sbin:/usr/sbin"` to it.*
+
 #### What addresses will you see?
 
 The addresses you see fall into a few categories:
@@ -38,7 +40,7 @@ The addresses you see fall into a few categories:
 
 **Other common addresses:**
 - `127.0.0.1` / `::1` — loopback, also known as localhost. Traffic sent here is intercepted by the OS and looped back to the local machine — it never touches a NIC or a router.
-- `169.254.x.x` — link-local, OR APIPA. **APIA** is typically assigned when DHCP fails. DHCP is the Dynamic Host Configuration Protocol. It's the system that automatically assigns IP addresses to devices when they join a network, so you don't have to set one. APIPA stands for Automatic Private IP Addressing. It's a fallback mechanism some OS's use when a device can't reach a DHCP server. In practice, seeing a 169.254.x.x address is usually a sign that something is wrong — your machine couldn't find the DHCP server, meaning the router is down, the network cable is unplugged, or there's some other connectivity issue. Conversely, **link-local** refers to addresses that are only valid on a single network segment — they can't be routed beyond the directly connected link (cable, Wi-Fi, etc.). *Link-local does not necessarily mean that there is a connectivity issue.*
+- `169.254.x.x` — link-local, OR APIPA. **APIPA** is typically assigned when DHCP fails. DHCP is the Dynamic Host Configuration Protocol. It's the system that automatically assigns IP addresses to devices when they join a network, so you don't have to set one. APIPA stands for Automatic Private IP Addressing. It's a fallback mechanism some OS's use when a device can't reach a DHCP server. In practice, seeing a 169.254.x.x address is usually a sign that something is wrong — your machine couldn't find the DHCP server, meaning the router is down, the network cable is unplugged, or there's some other connectivity issue. Conversely, **link-local** refers to addresses that are only valid on a single network segment — they can't be routed beyond the directly connected link (cable, Wi-Fi, etc.). *Link-local does not necessarily mean that there is a connectivity issue.*
 - `fd00::/8` or `fe80::/10` — IPv6 private and link-local ranges
 
 On a typical home or office machine, `ip a` will show only private IPs. On a cloud VM (AWS, GCP, etc.), you will often see a private IP on the interface even if the machine has a public IP — the public IP is handled by the cloud provider's NAT layer and won't appear in `ip a` at all.
@@ -119,4 +121,4 @@ The `-p` flag specifies the host port you configured. The traffic hits your loca
 
 ### Conclusion
 
-Networking is one of those topics that feels irrelevant until you find yourself unable to explain why a pipeline can't reach a database you know is running. The concepts here — NAT, private vs. public IPs, SSH, and port forwarding — come up often enough in data engineering work to make learnng these foundations worthwhile, even when they aren't the focus of what you're building. I hope this serves as a useful starting point. And as always, happy coding!
+Networking is one of those topics that feels irrelevant until you find yourself unable to explain why a pipeline can't reach a database you know is running. The concepts here — NAT, private vs. public IPs, SSH, and port forwarding — come up often enough in data engineering work to make learning these foundations worthwhile, even when they aren't the focus of what you're building. I hope this serves as a useful starting point. And as always, happy coding!
