@@ -8,7 +8,7 @@ I've been working through a Linux networking course lately, and wanted to docume
 
 ### Why This Matters for Data Engineers
 
-Data engineering work is rarely confined to a single machine. Pipelines pull from remote databases, push to cloud storage, and run on servers accessible only through a terminal. Networking knowledge is therefore empowering, helping you debug issues with these varied services more independently.
+Data engineering work is rarely confined to a single machine. Pipelines pull from remote databases, push to cloud storage, and run on servers or K8 clusters accessible only through a terminal. Networking knowledge is therefore empowering, helping you debug issues with all sorts of services independently.
 
 ### NAT: Network Address Translation
 
@@ -84,12 +84,12 @@ Your router has a single public IP. Behind it are many devices with private IPs,
 1. Your router sees the incoming traffic and forwards it to a private IP on port `80`
 1. The server on that machine responds, and the router sends the reply back
 
-The outside world only ever sees the public IP — the internal machine stays hidden.
+The outside world only ever sees the public IP; the internal machine stays hidden.
 
 Other common uses include:
-- Hosting a game server at home
 - SSH-ing into a home machine from outside your network
 - Exposing a local web server to the internet
+- (If you grew up in the early 2000s) having a LAN party =)
 
 #### Port Forwarding with VirtualBox
 
@@ -121,4 +121,4 @@ The `-p` flag specifies the host port you configured. The traffic hits your loca
 
 ### Conclusion
 
-Networking is one of those topics that feels irrelevant until you find yourself unable to explain why a pipeline can't reach a database you know is running. The concepts here — NAT, private vs. public IPs, SSH, and port forwarding — come up often enough in data engineering work to make learning these foundations worthwhile, even when they aren't the focus of what you're building. I hope this serves as a useful starting point. And as always, happy coding!
+The concepts here — NAT, private vs. public IPs, SSH, and port forwarding — come up often enough in data engineering work to make learning these foundations worthwhile, even when they aren't the focus of what you're building. I hope this serves as a useful starting point. And as always, happy coding!
