@@ -13,3 +13,7 @@ I'm a software engineer with a background in geospatial data science and a stron
 
 
 I obtained my Master's degree (2020) in Geographic Information Science from Clark University in Worcester, MA. I have a Certificate of Advanced Study (2018) in Data Science from Syracuse University, and obtained my Bachelor's degree (2015) in Environmental Studies from Ithaca College.
+
+### AI Usage
+
+This blog is hand-typed and written in my own words. All posts have been molded around past experiences and desire to write them down for posterity. By taking the time to elucidate my own understanding of a technical concept, I am able to further solidify and deepen that knowledge for myself. Therefore, to outsource this content creation would be a disservice both to the readers and to myself. So, while AI may have been used as a personal learning assistant or to help me clarify some concepts, *in no way shape or form does AI drive the content or style in the blog*.
