@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Streamlining a GIS Workflow with PostGIS
-categories: [Data Engineering, Postgres/PostGIS, SQL, GIS]
+categories: [Data Engineering, SQL, GIS]
 ---
 
 Last fall semester, I was able to take an independent study where I expanded my knowledge of SQL beyond its traditional use of querying relational databases for text and numeric values. Instead, I began using it as a standalone GIS, using it to store and query geometries (points, lines, and polygons).

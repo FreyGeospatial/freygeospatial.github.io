@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Case for Auto-Formatters and Linters: Elevating Code Quality in Software Engineering"
-categories: [DevOps, Python, GitHub Actions, Shell Scripting]
+categories: [DevOps, Python, GitHub Actions, Bash]
 ---
 
 

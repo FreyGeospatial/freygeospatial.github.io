@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Hosting a PostGIS Database on AWS EC2
-categories: [Data Engineering, Postgres/PostGIS, SQL, AWS, GIS, Geoserver, EC2]
+categories: [Data Engineering, SQL, AWS, GIS, Geoserver, EC2]
 ---
 
 
