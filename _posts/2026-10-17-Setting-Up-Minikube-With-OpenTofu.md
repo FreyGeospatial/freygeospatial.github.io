@@ -34,7 +34,7 @@ To keep my work as reproducible as possible and easy to refer back to, I've deci
 
 #### Kubectl
 
-Kubectl is the main command-line tool used to manage K8s clusters, including Minikube. It interacts with the K8s control plane via the K8s API. Simply, it provides a mechanism for viewing logs, deploying applications, managing networks, and all aspects of the cluster. When Minikube creates a cluster, it adds a context to your kubeconfig so that kubectl talks to it automatically.
+Kubectl is the main command-line tool used to manage K8s clusters, including Minikube. It interacts with the K8s control plane via the K8s API. Simply, it provides a mechanism for viewing logs, deploying applications, managing networks, and all aspects of the cluster. When Minikube creates a cluster, it adds a context to your `kubeconfig` so that `kubectl` talks to it automatically.
 
 #### Helm
 
@@ -44,7 +44,7 @@ Helm is both a package manager (like `uv`, `conda`, or `poetry`) and a templatin
 
 ArgoCD is a K8s-specific tool that constantly checks a git repo for changes, and automatically deploys changes to the K8s cluster based on the changes it sees, thereby keeping git as the source of truth. It has certain advantages over traditional CI/CD pipelines like GitHub Actions, Azure Pipelines, or Jenkins, but is more limited in what it can touch. In general, infrastructure configuration that rarely changes and is global to all applications should be managed by ArgoCD; application-specific deployments should likely be managed via traditional CI/CD.
 
-Be aware that mixing kubectl edits with Helm can be problematic, and performing manual applies when using ArgoCD can cause a constant tension between what exists in git versus what K8s knows the deployed manifest to be.
+Be aware that mixing `kubectl` edits with Helm can be problematic, and performing manual applies when using ArgoCD can cause a constant tension between what exists in git versus what K8s knows the deployed manifest to be.
 
 #### Istio
 
@@ -52,14 +52,14 @@ Istio is a service mesh: a layer that manages how services in the cluster talk t
 
 ### Prerequisites
 
-You should be somewhat familiar with Docker and have it installed and running already (`docker info` should succeed). Make sure your Docker settings allow at least 9 GB of memory and 6 CPUs, since the cluster below requests 8192mb and 6 CPUs. If you have less to spare, lower `memory` and `cpus` in `main.tf` below, but note that it may have adverse impacts on future tutorials that refer to this work.
+You should be somewhat familiar with Docker and have it installed and running already (`docker info` should succeed). Make sure your Docker settings allow at least 9 GB of memory and 6 CPUs, since the cluster below requests `8192mb` and 6 CPUs. If you have less to spare, lower `memory` and `cpus` in `main.tf` below, but note that it may have adverse impacts on future tutorials that refer to this work.
 
 ### Setup
 
 For this tutorial, I use [Homebrew](https://brew.sh) as a package manager, but feel free to use your own, and adjust your installation commands accordingly.
 
 1. Install Minikube with `brew install minikube`
-1. Pre-download the Kubernetes files the provider needs with `minikube start --vm=true --driver=docker --download-only --kubernetes-version=v1.37.0`. This is required for the tofu/terraform provider to work. We specify `--download-only` so that we don't instantiate a cluster and instead only download the necessary files given the configuration specified (the kubernetes image, drivers, binaries, etc).
+1. Pre-download the Kubernetes files the provider needs with `minikube start --vm=true --driver=docker --download-only --kubernetes-version=v1.37.0`. This is required for the `tofu`/`terraform` provider to work. We specify `--download-only` so that we don't instantiate a cluster and instead only download the necessary files given the configuration specified (the kubernetes image, drivers, binaries, etc).
 1. Install OpenTofu with `brew install opentofu`
 1. Install `kubectl` with `brew install kubectl`
 1. Install `helm` with `brew install helm`
@@ -112,7 +112,7 @@ For this tutorial, I use [Homebrew](https://brew.sh) as a package manager, but f
     # Uncomment the line below if you want to ignore planout files.
     # planout
     ```
-1. Create a folder for your tofu (terraform) code and `cd` into that also: `mkdir tofu && cd $_`
+1. Create a folder for your `tofu` (`terraform`) code and `cd` into that also: `mkdir tofu && cd $_`
 1. Create a `main.tf` and `provider.tf` file and populate them accordingly:
 
     **main.tf**
@@ -162,7 +162,7 @@ Run the following from inside the `tofu` directory:
 
 ### Verify
 
-Confirm the cluster is up and kubectl is pointed at it:
+Confirm the cluster is up and `kubectl` is pointed at it:
 
 ```bash
 kubectl config current-context   # should print "minikube"
@@ -176,10 +176,10 @@ If you run into errors, check that the Minikube container is running with `docke
 
 As you work with more clusters and namespaces, typing `kubectl config use-context ...` and `-n <namespace>` on every command gets tedious. [kubectx](https://github.com/ahmetb/kubectx) is a small tool that makes switching between them quick. Homebrew installs two commands together:
 
-- `kubectx` switches between clusters (kubectl "contexts"), which matters once you have more than one cluster in your kubeconfig.
+- `kubectx` switches between clusters (`kubectl` "contexts"), which matters once you have more than one cluster in your `kubeconfig`.
 - `kubens` switches the default namespace, so you don't have to pass `-n` every time.
 
-A cluster is the Kubernetes environment itself; a context is a saved entry in your kubeconfig file (`~/.kube/config`) that pairs a cluster with a user and, optionally, a default namespace. Switching contexts just points kubectl at a different entry in that file.
+A cluster is the Kubernetes environment itself; a context is a saved entry in your `kubeconfig` file (`~/.kube/config`) that pairs a cluster with a user and, optionally, a default namespace. Switching contexts just points `kubectl` at a different entry in that file.
 
 1. Install it with `brew install kubectx`
 1. Try it out:
@@ -196,7 +196,7 @@ Once ArgoCD is installed below, you can run `kubens argocd` and drop the `-n arg
 
 ### Install ArgoCD
 
-With the cluster running, we can install ArgoCD onto it. Notice that we're installing it manually with `helm` rather than through OpenTofu. ArgoCD is meant to manage everything deployed to the cluster from git, and that eventually includes itself, so it needs a one-time manual bootstrap. In a future post we'll create an ArgoCD `Application` that points at its own Helm chart, so that ArgoCD manages its own upgrades and configuration from git. If OpenTofu owned the release too, the two tools would end up fighting over it, and you'd have to manually remove it from the tofu/terraform state file anyway.
+With the cluster running, we can install ArgoCD onto it. Notice that we're installing it manually with `helm` rather than through OpenTofu. ArgoCD is meant to manage everything deployed to the cluster from git, and that eventually includes itself, so it needs a one-time manual bootstrap. In a future post we'll create an ArgoCD `Application` that points at its own Helm chart, so that ArgoCD manages its own upgrades and configuration from git. If OpenTofu owned the release too, the two tools would end up fighting over it, and you'd have to manually remove it from the `tofu`/`terraform` state file anyway.
 
 1. Add the Argo Helm repository and find the current chart version:
     ```bash
@@ -213,7 +213,7 @@ With the cluster running, we can install ArgoCD onto it. Notice that we're insta
       --version 10.10.5
     ```
 
-    It may take a moment, but once this completes, helm (hopefully) should have returned the successful deployment status to you, along with instructions for accessing the ArgoCD GUI. We will use the port forward option in the next step.
+    It may take a moment, but once this completes, `helm` (hopefully) should have returned the successful deployment status to you, along with instructions for accessing the ArgoCD GUI. We will use the port forward option in the next step.
 
 #### Verify ArgoCD in the browser
 
