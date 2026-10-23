@@ -89,7 +89,8 @@ The outside world only ever sees the public IP; the internal machine stays hidde
 Other common uses include:
 - SSH-ing into a home machine from outside your network
 - Exposing a local web server to the internet
-- (If you grew up in the early 2000s) having a LAN party =)
+- Accessing private services inside a Kubernetes cluster from your local machine
+- (If you grew up in the early 2000s) having a LAN party =3
 
 #### Port Forwarding with VirtualBox
 
