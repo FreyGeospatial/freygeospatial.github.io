@@ -6,11 +6,7 @@ categories: [OpenTofu, Terraform, Kubernetes]
 
 The past 6 months or so, I've been working more closely with Kubernetes in my day job. It's had me interested in using it for my own personal projects. Though I'm going to keep things simple initially with `minikube`, this will be the start of what I hope will be an interesting and productive learning experience.
 
-In this post we'll bring up a local Kubernetes cluster with OpenTofu and Minikube, then bootstrap ArgoCD on it and document some of my preferred initial setup.
-
-### Relevance to Data Engineering and Software Development
-
-I mentioned this briefly in my last post, and I'll say it again: developers who understand infrastructure and how their code is deployed write better software and debug faster than those who don't.
+This post establish the beginning of a series where we implement a full-stack (albeit backend-focused, as is my preference), geospatial-centric platform to answer questions related to wildfire risk. We will start off by bringing up a local Kubernetes cluster with OpenTofu and Minikube, then bootstrap ArgoCD on it with my preferred initial setup.
 
 ### Tools I will be using in this tutorial and future posts
 
