@@ -38,7 +38,7 @@ Kubectl is the main command-line tool used to manage K8s clusters, including Min
 
 #### Helm
 
-Helm is both a package manager (like `uv`, `conda`, or `poetry`) and a templating software (vaguely similar to jinja), making it easier to deploy simple and complex applications alike. It helps you bundle an application image with other dependencies, including sidecars, virtual services, ConfigMaps, and more.
+Helm is both a package manager (like `uv`, `conda`, or `poetry`) and a templating software (vaguely similar to jinja) for K8s, making it easier to deploy simple and complex applications alike. It helps you bundle an application image with other dependencies, including sidecars, virtual services, ConfigMaps, and more.
 
 #### ArgoCD
 
