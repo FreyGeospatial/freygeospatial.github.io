@@ -75,7 +75,7 @@ It will also be helpful- but not explicitly required- to use these tools locally
 #### Workflow:
 The easiest methods I have seen has been to first set up your IDE to autoformat your python code automatically upon saving.
 
-After installing the Black Formatter VS Code Extension, I go into my VS Code user settings. On MacOS, these can usually be found at: `/Users/<user>/Library/Application Support/Code/User/settings.json`.
+After installing the Black Formatter VS Code Extension, I go into my VS Code user settings. On macOS, these can usually be found at: `/Users/<user>/Library/Application Support/Code/User/settings.json`.
 
 Add this to the json:
 
