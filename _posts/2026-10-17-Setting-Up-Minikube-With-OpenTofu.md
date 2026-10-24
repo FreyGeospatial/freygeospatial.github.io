@@ -62,7 +62,7 @@ For this tutorial, I use [Homebrew](https://brew.sh) as a package manager, but f
 1. Create a new directory and `cd` into it: `mkdir base-infra && cd $_`
 1. Instantiate your git repo: `git init`
 1. Create your `.gitignore` file and add the paths listed here to it. State files can contain secrets, which is why they are excluded.
-    ```txt
+    ```gitignore
     # Local .terraform directories
     .terraform/
 
@@ -119,8 +119,7 @@ For this tutorial, I use [Homebrew](https://brew.sh) as a package manager, but f
       cpus         = 6        # Minikube recommends at least 4 cores for istio
       memory       = "8192mb" # Minikube recommends at least 8192mb for istio: https://minikube.sigs.k8s.io/docs/handbook/addons/istio/
 
-      # Enable useful local add-ons automatically, which reduces the need for manual setup.
-      # For the full list of add-ons, use `minikube addons list`
+      # Enable useful local add-ons automatically
       addons = [
         "default-storageclass",
         "dashboard",
@@ -129,21 +128,20 @@ For this tutorial, I use [Homebrew](https://brew.sh) as a package manager, but f
         "metrics-server",
       ]
     }
-    ```
-    **provider.tf**
-    ```hcl
-    terraform {
-      required_version = ">= 1.6.0"
-      required_providers {
-        minikube = {
-          source  = "scott-the-programmer/minikube"
-          version = "~> 0.8.0"
-        }
-      }
-    }
 
-    provider "minikube" {
-      kubernetes_version = "v1.37.0"
+    resource "helm_release" "argocd" {
+      name             = "argocd"
+      repository       = "https://argoproj.github.io/argo-helm"
+      chart            = "argo-cd"
+      version          = "10.10.5"
+      namespace        = "argocd"
+      create_namespace = true
+
+      depends_on = [minikube_cluster.my_local_cluster]
+
+      lifecycle {
+        ignore_changes = all
+      }
     }
     ```
     I've filled in some of the configurations, but don't worry too much about that just yet; we will cover them as needed later. In short: `driver` is how Minikube runs the cluster (Docker, in our case), `cpus` and `memory` are the resources allotted to it, and `addons` are optional cluster components Minikube installs for you.
@@ -168,6 +166,24 @@ kubectl get pods -A              # system pods should be Running
 
 If you run into errors, check that the Minikube container is running with `docker ps | grep minikube`.
 
+**Note on ArgoCD installatio **: It generally isn't common practice to have Terraform or Tofu manage application installations (it is an IaC tool after all). However, for bootstrapping ArgoCD it makes sense. ArgoCD is meant to manage everything deployed to the cluster from git, and that eventually can include itself.  However, when both tools own a software release, there would eventually be state conflicts. This is resolved by adding a `lifecycle { ignore_changes = all }` block. So even if ArgoCD were to upgrade itself or change its configuration in some way that causes drift from the Tofu state file, a future `tofu apply` would not register the diffs.
+
+#### Verify ArgoCD in the browser
+
+ArgoCD's UI isn't exposed outside the cluster, so we use a port-forward to reach it from your machine. If you are unfamiliar with port forwarding, please see my [post on Linux networking basics]({% post_url 2026-04-04-Linux-Networking-Basics %}).
+
+1. Fetch the initial admin password:
+    ```bash
+    kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+    ```
+1. Forward the ArgoCD server to your machine. Leave this running in its own terminal:
+    ```bash
+    kubectl port-forward svc/argocd-server -n argocd 8080:443
+    ```
+1. Open [https://localhost:8080](https://localhost:8080). Your browser will warn about it being unsecured, which is expected locally. Continue past it and log in with the username `admin` and the password from step 1.
+
+You should see an empty ArgoCD dashboard. We haven't pointed it at a git repo yet, so it has nothing to deploy. We'll do that in a future post, along with handing ArgoCD control of its own chart.
+
 ### Optional: Install kubectx
 
 As you work with more clusters and namespaces, typing `kubectl config use-context ...` and `-n <namespace>` on every command gets tedious. [kubectx](https://github.com/ahmetb/kubectx) is a small tool that makes switching between them quick. Homebrew installs two commands together:
@@ -188,48 +204,12 @@ A cluster is the Kubernetes environment itself; a context is a saved entry in yo
     kubens default       # go back to the default namespace
     ```
 
-Once ArgoCD is installed below, you can run `kubens argocd` and drop the `-n argocd` from the commands that follow.
+You can try running `kubens argocd` and drop the `-n argocd` from the commands that follow.
 
-### Install ArgoCD
-
-With the cluster running, we can install ArgoCD onto it. Notice that we're installing it manually with `helm` rather than through OpenTofu. ArgoCD is meant to manage everything deployed to the cluster from git, and that eventually includes itself, so it needs a one-time manual bootstrap. In a future post we'll create an ArgoCD `Application` that points at its own Helm chart, so that ArgoCD manages its own upgrades and configuration from git. If OpenTofu owned the release too, the two tools would end up fighting over it, and you'd have to manually remove it from the `tofu`/`terraform` state file anyway.
-
-1. Add the Argo Helm repository and find the current chart version:
-    ```bash
-    helm repo add argo https://argoproj.github.io/argo-helm # adds the argocd helm chart repo to our host machine's internal index
-    helm repo update # pulls in the latest list of charts from the added repos
-    helm search repo argo/argo-cd --version 10.10.5
-    ```
-
-1. Install the chart into its own namespace:
-    ```bash
-    helm install argocd argo/argo-cd \
-      --namespace argocd \
-      --create-namespace \
-      --version 10.10.5
-    ```
-
-    It may take a moment, but once this completes, `helm` (hopefully) should have returned the successful deployment status to you, along with instructions for accessing the ArgoCD GUI. We will use the port forward option in the next step.
-
-#### Verify ArgoCD in the browser
-
-ArgoCD's UI isn't exposed outside the cluster, so we use a port-forward to reach it from your machine. If you are unfamiliar with port forwarding, please see my [post on Linux networking basics]({% post_url 2026-04-04-Linux-Networking-Basics %}).
-
-1. Fetch the initial admin password:
-    ```bash
-    kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
-    ```
-1. Forward the ArgoCD server to your machine. Leave this running in its own terminal:
-    ```bash
-    kubectl port-forward svc/argocd-server -n argocd 8080:443
-    ```
-1. Open [https://localhost:8080](https://localhost:8080). Your browser will warn about it being unsecured, which is expected locally. Continue past it and log in with the username `admin` and the password from step 1.
-
-You should see an empty ArgoCD dashboard. We haven't pointed it at a git repo yet, so it has nothing to deploy. We'll do that in a future post, along with handing ArgoCD control of its own chart.
 
 ### Tear down
 
-When you're done, you can remove the cluster with `tofu destroy` if desired. Because the cluster is defined in code, you can always bring it back with `tofu apply`. In the future though, remember that destroying the cluster will also destroy any data, logs, and applications stored in it. Manually bootstrapped steps would need to be re-done.
+When you're done, you can remove the cluster with `tofu destroy` if desired. Because the cluster is defined in code, you can always bring it back with `tofu apply`. In the future though, remember that destroying the cluster will also destroy any data, logs, and applications stored in it.
 
 ### What's next
 
