@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Start Using the Power BI REST API with Powershell
-categories: [Power BI, Powershell, Business Intelligence]
+title:  Start Using the Power BI REST API with PowerShell
+categories: [Power BI, PowerShell, Business Intelligence]
 ---
 
 Earlier today, I used for the first time the Power BI REST API to access some reports in my company's workspace. This API can be used with Windows PowerShell. After spending a couple hours familiarizing myself with both PowerShell and the API, I think I've finally got the hang of it.
