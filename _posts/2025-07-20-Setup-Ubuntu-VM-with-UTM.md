@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Setup an Ubuntu Virtual Machine on MacOS with the UTM Emulator"
+title:  "Setup an Ubuntu Virtual Machine on macOS with the UTM Emulator"
 categories: [Linux, virtual machines]
 ---
 
