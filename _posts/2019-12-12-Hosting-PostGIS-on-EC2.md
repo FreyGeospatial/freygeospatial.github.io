@@ -41,7 +41,7 @@ For the purposes of this tutorial, I am changing the data from the original proj
     ![Key-Pair Generation](/images/postgis-ec2/Key-pair-generation.png)
 
     1. Choose a name for your key pair that is easy to remember
-    1. If you are using Linux, MacOS, or a modern Windows OS (v10 or higher), use .pem file format
+    1. If you are using Linux, macOS, or a modern Windows OS (v10 or higher), use .pem file format
     1. Download the key pair and store it in a safe place. ***Do not share it!***
 
         ![Keep-it-safe](/images/postgis-ec2/keep-it-safe.gif)
@@ -78,7 +78,7 @@ For the purposes of this tutorial, I am changing the data from the original proj
 1. Under your available EC2 instances, click on the one you just created and then click the "connect" button
 1. Click the "SSH Client" tab
     - This will give you instructions on how to use an SSH client to log into your instance remotely.
-    - MacOS, Linux, and modern Windows OS should have an SSH client pre-installed. On MacOS, this is the terminal.
+    - macOS, Linux, and modern Windows OS should have an SSH client pre-installed. On macOS, this is the terminal.
 1. Open your SSH Client and `cd` into the directory containing your .pem file.
 1. Change the permissions on the .pem file.
     - `chmod 400 pem_filename.pem`
