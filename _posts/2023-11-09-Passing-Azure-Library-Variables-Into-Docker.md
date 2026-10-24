@@ -71,10 +71,11 @@ docker build --build-arg username=$(username) -f $(Build.SourcesDirectory)/Docke
 
 You might need to change or add additional arguments, including to specify the location of the dockerfile. I put down the default location for this tutorial.
 
-However, I won't be using the bash command directly in the pipeline, but it is good to know what is happening behind the scenes.
+I won't be using the bash command directly in the pipeline, but it is good to know what is happening behind the scenes.
 
+> **Security note: build arguments are not a safe place for real secrets.** Build arguments and anything copied into an `ENV` are recorded in the image's metadata and layer history, so anyone who can pull the image can read them with `docker history` or `docker inspect`. Masking the value in the pipeline log does not change this. That is acceptable for the username printed in this tutorial, but **do not use this pattern for passwords, tokens, or keys.** For those, use a secret mount instead, which exposes the secret to a single `RUN` step without writing it to any layer:
 
-But whatever method you choose to use, you need to connect the pipeline the Azure Library group. In the traditional UI, this is where you can make the connection:
+Whatever method you choose to use, you need to connect the pipeline the Azure Library group. In the traditional UI, this is where you can make the connection:
 
 <br>
 
