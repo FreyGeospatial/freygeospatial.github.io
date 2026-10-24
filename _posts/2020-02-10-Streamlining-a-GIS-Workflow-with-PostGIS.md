@@ -54,7 +54,11 @@ Let's take a look at our inputs:
 
 <br>
 
-The first task was to create a buffer around the infestation points, and to dissolve the boundaries. You can do this in a couple ways. The first is the create a nested query, like so:
+The first task was to create a buffer around the infestation points, and to dissolve the boundaries.
+
+**A note on units:** `ST_Buffer` measures distance in the units of the geometry's coordinate reference system (CRS). All of the layers in this tutorial are stored in a projected CRS whose units are meters, which is why a buffer distance of `200` means 200 meters. You can verify your layer's CRS with `SELECT find_srid('staging', 'kemo_infest_points', 'geom');` and reproject it if desired with `ST_Transform`.
+
+You can do this in a couple ways. The first is the create a nested query, like so:
 
 ```sql
 --create buffers and dissolve boundaries
