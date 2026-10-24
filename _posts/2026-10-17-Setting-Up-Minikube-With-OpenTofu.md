@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Deploying Kubernetes (Minikube) Locally with OpenTofu"
-categories: [OpenTofu, Terraform, Kubernetes]
+title:  "Deploying Kubernetes Locally with OpenTofu"
+categories: [OpenTofu, Kubernetes, ArgoCD, Wildfire Risk Explorer]
 ---
 
 The past 6 months or so, I've been working more closely with Kubernetes in my day job. It's had me interested in using it for my own personal projects. Though I'm going to keep things simple initially with `minikube`, this will be the start of what I hope will be an interesting and productive learning experience.
