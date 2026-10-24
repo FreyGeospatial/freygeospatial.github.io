@@ -27,6 +27,6 @@ The kinds of problems I'm usually working on are:
 
 I obtained my Master's degree (2020) in Geographic Information Science from Clark University in Worcester, MA. I have a Certificate of Advanced Study (2018) in Data Science from Syracuse University, and obtained my Bachelor's degree (2015) in Environmental Studies from Ithaca College.
 
-### AI Usage
+### AI Disclosure
 
 This blog is by and large hand-typed, and both its content and structure is 100% driven by me. All posts have been molded around past experiences and desire to write them down for posterity. By taking the time to elucidate my own understanding of a technical concept, I am able to further solidify and deepen that knowledge for myself. While AI is used as a personal learning assistant and editor, *in no way shape or form does AI drive the content or style in the blog*. Every post continues to take hours of my own human time to piece together, verify, and edit, just as it did before the advent of AI.
