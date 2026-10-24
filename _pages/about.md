@@ -17,7 +17,7 @@ I started out making maps and analyzing spatial data in R, and over time my work
 
 The kinds of problems I'm usually working on are:
 
-- **Event-driven data pipelines:** asynchronous, horizontally-scalable ETL/ELT microservices that extract, validate, transform, and export data, with dead letter handling.
+- **Event-driven data pipelines:** asynchronous, horizontally-scalable ETL/ELT pipelines that extract, validate, transform, and export data, with dead letter handling.
 - **Cloud infrastructure:** Terraform, Kubernetes deployments with Helm, ArgoCD, and CI/CD, autoscaling, cloud monitoring, cluster and repository migrations.
 - **Shared tooling for engineering teams:** reusable Python packages, Terraform modules, pipeline templates and Helm charts
 - **MLOps:** tracking and evaluating the accuracy and reproducibility of LLM-powered applications.
